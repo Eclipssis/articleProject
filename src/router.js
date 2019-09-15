@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './views/Login.vue';
-import MainLayout from './views/MainLayout.vue';
+import DefaultLayout from './layouts/DefaultLayout.vue';
+import ArticlesEdit from './views/ArticlesEdit.vue';
+import Main from './views/Main.vue';
 
 Vue.use(Router);
 
@@ -15,8 +17,19 @@ export default new Router({
 		},
 		{
 			path: '/',
-			name: 'MainPage',
-			component: MainLayout
+			component: DefaultLayout,
+			children: [
+				{
+					path: '/articles/edit',
+					name: 'ArticlesEdit',
+					component: ArticlesEdit
+				},
+				{
+					path: '/articles',
+					name: 'Main',
+					component: Main
+				}
+			]
 		}
 	]
 });

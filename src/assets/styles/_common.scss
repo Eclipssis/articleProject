@@ -12,6 +12,14 @@ ul, ol {
 	list-style: none;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: #ffffff;
+}
+
 .content-wrapper {
 	flex: 1 0 auto;
 }
@@ -42,6 +50,10 @@ ul, ol {
     min-width: 120px;
     font-size: 18px;
   }
+}
+
+h1 {
+	font-size: 40px;
 }
 
 h1, h2, h3, h4, h5, h6 {

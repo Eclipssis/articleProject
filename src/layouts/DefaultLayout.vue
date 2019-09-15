@@ -3,7 +3,7 @@
     <Header></Header>
 
     <Content>
-      CONTENT
+      <router-view />
     </Content>
 
     <Footer></Footer>
@@ -16,7 +16,7 @@ import Header from "@/layouts/Header";
 import Content from "@/layouts/Content";
 
 export default {
-  name: 'MainLayout',
+  name: 'DefaultLayout',
   components: {
     Footer,
     Header,

@@ -6,8 +6,12 @@
 <style lang="scss" scoped>
 	$footer-height: 83px;
 	$header-height: 52px;
+	$content-padding-y: 30px;
 
 	.content {
-		min-height: calc(100vh - #{$header-height + $footer-height});
+		max-width: 1200px;
+		padding: $content-padding-y 30px;
+		margin: 0 auto;
+		min-height: calc(100vh - #{$header-height + $footer-height + $content-padding-y * 2});
 	}
 </style>
