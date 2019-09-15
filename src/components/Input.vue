@@ -1,6 +1,11 @@
 <template>
   <div class="input-wrap">
-		<input :type="localType" class="form-control" />
+		<input 
+			class="form-control" 
+			:type="localType" 
+			:value="value" 
+			@input="$emit('input', $event.target.value)"
+		/>
 		<i v-if="tooglePassword" class="fas" :class="eyeType" @click="togglePassword"></i>
 	</div>
 </template>
@@ -10,6 +15,11 @@ export default {
   name: "Input",
 
   props: {
+		value: {
+      type: String,
+      default: ""
+		},
+
     type: {
       type: String,
       default: "text"
@@ -35,10 +45,9 @@ export default {
 	
 	methods: {
 		togglePassword() {
-			console.log('oolge')
 			this.localType = this.localType === 'password' ? 'text' : 'password'
 		}
-	},
+	}
 };
 </script>
 
@@ -72,6 +81,7 @@ export default {
   top: 50%;
   margin-top: -8px;
   right: 10px;
-  cursor: pointer;
+	cursor: pointer;
+	color: #222d32;
 }
 </style>

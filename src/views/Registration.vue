@@ -1,9 +1,10 @@
 <template>
-  <div class="login">
+  <div class="registration">
     <span class="logo logo-light"></span>
     
-    <div class="login-body">
-      <h2 class="text-right">Login</h2>
+    <div class="registration-body">
+
+      <h2 class="text-right">Registration</h2>
 
       <div v-if="errorMessage" class="badge badge-danger">
         {{errorMessage}}
@@ -19,10 +20,16 @@
           <Input :type="'password'" toogle-password id="password" v-model="password"/>
       </div>
 
+      <!-- TODO: add field repeat password-->
+			<!-- <div class="form-group">
+        <label for="password">Repeat password</label>
+          <Input :type="'password'" toogle-password id="password" v-model="repeatPassword"/>
+      </div> -->
+
       <div class="auth-buttons">
-        <router-link to="/registration" class="auth-link">Register</router-link>
+        <router-link to="/login" class="auth-link">Log in</router-link>
         <span> or</span>
-        <Button class="btn-login" :loading="loading" @click="onSingIn">Login</Button>
+        <Button class="btn-login" :loading="loading" @click="register">Register</Button>
       </div>
     </div>
   </div>
@@ -33,25 +40,26 @@
 import { mapActions } from "vuex";
 
 export default {
-  name: "Login",
+  name: "Registration",
 
   data() {
     return {
       email: '',
       password: '',
-      errorMessage: '',
+      errorMessage: null,
       loading: false
     }
   },
 
   methods: {
     ...mapActions({
-      singIn: 'auth/signIn'
+      createUser: 'auth/createUser'
     }),
 
-    async onSingIn() {
+    async register() {
       try {
-        await this.singIn({ email: this.email, password: this.password })
+        this.loading = true 
+        await this.createUser({ email: this.email, password: this.password })
         this.$router.push({name: 'Main'})
       } catch (error) {
         this.errorMessage = error
@@ -62,4 +70,3 @@ export default {
   }
 };
 </script>
-

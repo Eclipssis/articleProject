@@ -6,26 +6,26 @@
 
 		<nav>
 			
-			<div class="user-panel">
-				User name
+			<div v-if="user" class="user-panel">
+				{{ user.email }}
 				<i class="fas fa-user"></i>
 			</div>
 
 			<ul class="nav-bar">
-				<li class="nav-item">
-					<a class="nav-link">
+				<li v-if="user" class="nav-item">
+					<router-link class="nav-link" to='/articles/edit'>
 						Edit articles
 						<i class="fas fa-newspaper"></i>
-					</a>
+					</router-link>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link">
+				<li v-if="!user" class="nav-item">
+					<router-link class="nav-link" to='/login'>
 						Login
 						<i class="fas fa-sign-in-alt"></i>
-					</a>
+					</router-link>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link">
+				<li v-if="user" class="nav-item">
+					<a class="nav-link" @click="onSignOut">
 						Logout
 						<i class="fas fa-sign-out-alt"></i>
 					</a>
@@ -36,9 +36,29 @@
 </template>
 
 <script>
-	export default {
-		name: 'Header'
-	}
+import { mapActions, mapState } from "vuex";
+
+export default {
+	name: 'Header',
+
+	computed: {
+		...mapState({
+			user: state => state.auth.user
+		})
+	},
+
+	methods: {
+		...mapActions({
+			signOut: 'auth/signOut'
+		}),
+
+		onSignOut() {
+			this.signOut().then(() => {
+				this.$router.push({name: 'Login'})
+			})
+		}
+	},
+}
 </script>
 
 <style lang="scss" scoped>

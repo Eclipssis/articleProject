@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './views/Login.vue';
+import Registration from './views/Registration.vue';
 import DefaultLayout from './layouts/DefaultLayout.vue';
 import ArticlesEdit from './views/ArticlesEdit.vue';
 import Main from './views/Main.vue';
@@ -14,6 +15,11 @@ export default new Router({
 			path: '/login',
 			name: 'Login',
 			component: Login
+		},
+		{
+			path: '/registration',
+			name: 'Registration',
+			component: Registration
 		},
 		{
 			path: '/',
