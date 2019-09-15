@@ -2,7 +2,7 @@
   <div class="login">
     <div class="login-body">
       <div class="text-left">
-        <span class="logo"></span>
+        <span class="logo logo-light"></span>
       </div>
 
       <div class="form-group">
@@ -37,12 +37,8 @@ export default {
 <style lang="scss" scoped>
 
 .logo {
-  display: inline-block;
-  width: 118px;
-  height: 18px;
   margin-bottom: 60px;
   margin-left: 120px;
-  background: url('../assets/logo-ligth.png') no-repeat;
 }
 
 .login {
