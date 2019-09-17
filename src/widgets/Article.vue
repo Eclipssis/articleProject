@@ -11,6 +11,7 @@
 			<p class="article-text">
 				{{article.text}}
 			</p>
+			<router-link to="/hell" class="article-more">Read more</router-link>
 		</div>
 	</article>
 </template>
@@ -30,6 +31,8 @@
 
 <style lang="scss" scoped>
 	.article {
+		display: inline-block;
+		width: 100%;
 		margin-bottom: 20px;
 		text-align: left;
 		box-shadow: 0px 0px 15px 0px #3b414d2e;
@@ -48,9 +51,19 @@
 		&-text {
 			overflow: hidden;
 			max-height: 105px;
+			margin-bottom: 10px;
 			&:after {
 				content: '...'
 			}
-		}		
+		}
+		
+		&-more {
+			font-size: 14px;
+			color: #007bff;
+			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 </style>

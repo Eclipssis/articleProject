@@ -2,7 +2,8 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store/index';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 import firebaseConfig from '@/config/firebase';
 
 // Import global components
@@ -13,8 +14,8 @@ Vue.component('Input', Input);
 Vue.component('Button', Button);
 
 // Configs
-firebase.initializeApp(firebaseConfig);
-
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+store.state.db = firebaseApp.firestore();
 Vue.config.productionTip = false;
 
 if (window.localStorage) {

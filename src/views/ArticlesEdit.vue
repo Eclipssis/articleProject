@@ -1,12 +1,26 @@
 <template>
 	<div class="articles-edit-page">
-		
+		<h1 class="text-left">ARTICLES EDITING</h1>
+		<ArticlesList :canEdit="canEdit"></ArticlesList>
 	</div>
 </template>
 
 <script>
+	import ArticlesList from "@/widgets/ArticlesList";
+	import { mapState } from 'vuex';
+
 	export default {
-		name: "ArticlesEdit"
+		name: "ArticlesEdit",
+		
+		components: {
+			ArticlesList
+		},
+
+		computed: {
+			...mapState({
+				canEdit: state => state.auth.user ? true : false
+			})
+		},
 	}
 </script>
 
