@@ -2,6 +2,7 @@
   <div class="input-wrap">
 		<input 
 			class="form-control" 
+			:placeholder="placeholder"
 			:type="localType" 
 			:value="value" 
 			@input="$emit('input', $event.target.value)"
@@ -23,6 +24,11 @@ export default {
     type: {
       type: String,
       default: "text"
+		},
+
+		placeholder: {
+			type: String,
+			default: ""
 		}
 	},
 
@@ -50,25 +56,6 @@ export default {
 
 .input-wrap {
   position: relative;
-}
-
-.form-control {
-  height: 30px;
-  font-size: 16px;
-  padding: 3px 10px;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  color: #495057;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  &:focus {
-    border-color: #80bdff;
-    outline: 0;
-    box-shadow: 0 0 5px 0.2rem rgba(0, 123, 255, 0.25);
-  }
-
-  label {
-    font-size: 22px;
-  }
 }
 
 .fas {

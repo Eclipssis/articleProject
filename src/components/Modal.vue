@@ -67,9 +67,8 @@
 	}
 
 	&-body {
-		padding: 15px 0 5px;
-		border-top: 1px solid #e4e4e4;
-		border-bottom: 1px solid #e4e4e4;
+		text-align: center;
+		padding: 15px 20px 5px;
 	}
 
 	&-footer {
@@ -78,6 +77,7 @@
 	}
 
 	&-header {
+		text-align: left;
 		padding: 15px;
 	}
 

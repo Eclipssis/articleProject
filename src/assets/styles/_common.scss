@@ -24,6 +24,14 @@ a:visited {
 	flex: 1 0 auto;
 }
 
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
 .text-left {
   text-align: left;
 }
@@ -50,6 +58,33 @@ a:visited {
     min-width: 120px;
 		font-size: 14px;
   }
+}
+
+.form-control {
+	min-width: 200px;
+  height: 30px;
+  font-size: 15px;
+  padding: 3px 10px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+	color: #495057;
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  &:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 5px 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  label {
+    font-size: 22px;
+  }
+}
+
+textarea.form-control {
+	padding-top: 8px;
+	min-height: 100px;
+	resize: none;
 }
 
 h1 {
@@ -134,5 +169,13 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #dc3545;
 }
 
+// Icons 
 
+.delete-icon {
+	color: #dc3545;
+}
 
+.edit-icon {
+	border-radius: 50%;
+	color: #ffc107;
+}
