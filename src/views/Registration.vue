@@ -29,7 +29,7 @@
       <div class="auth-buttons">
         <router-link to="/login" class="auth-link">Log in</router-link>
         <span> or</span>
-        <Button class="btn-login" :loading="loading" @click="register">Register</Button>
+        <Button class="btn-login" type="submit" :loading="loading" @click.prevent="register">Register</Button>
       </div>
     </div>
   </div>

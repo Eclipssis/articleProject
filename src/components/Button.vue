@@ -1,5 +1,5 @@
 <template>
-  <button class="btn" :class="type" @click="$emit('click', $event)">
+  <button class="btn" :type="type" :class="name" @click="$emit('click', $event)">
     <slot></slot>
 		<Spiner :size="'small'" v-if="loading"></Spiner>
   </button>
@@ -16,10 +16,15 @@ export default {
 	},
 
   props: {
-    type: {
+    name: {
       type: String,
       default: "btn-primary"
-		},
+    },
+    
+    type: {
+      type: String,
+      default: "button"
+    },
 		
 		loading: {
       type: Boolean,
@@ -34,6 +39,7 @@ export default {
 $btn-primary-bg: #007bff;
 $btn-success-bg: #28a745;
 $btn-danger-bg: #dc3545;
+$btn-dark-bg: #343a40;
 
 .btn {
   display: inline-block;
@@ -47,6 +53,10 @@ $btn-danger-bg: #dc3545;
   cursor: pointer;
   color: #fff;
 }
+
+.btn + .btn {
+  margin-left: 10px;
+} 
 
 .btn-primary {
   background-color: $btn-primary-bg;
@@ -74,4 +84,15 @@ $btn-danger-bg: #dc3545;
     border-color: darken($btn-danger-bg, 15%);
   }
 }
+
+.btn-dark {
+  background-color: $btn-dark-bg;
+  border-color: $btn-dark-bg;
+  &:hover {
+    background-color: darken($btn-dark-bg, 10%);
+    border-color: darken($btn-dark-bg, 15%);
+  }
+}
+
+
 </style>

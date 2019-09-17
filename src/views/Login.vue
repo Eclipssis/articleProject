@@ -2,7 +2,7 @@
   <div class="login">
     <span class="logo logo-light"></span>
     
-    <div class="login-body">
+    <form class="login-body">
       <h2 class="text-right">Login</h2>
 
       <div v-if="errorMessage" class="badge badge-danger">
@@ -22,9 +22,9 @@
       <div class="auth-buttons">
         <router-link to="/registration" class="auth-link">Register</router-link>
         <span> or</span>
-        <Button class="btn-login" :loading="loading" @click="onSingIn">Login</Button>
+        <Button class="btn-login" type="submit" :loading="loading" @click.prevent="onSingIn">Login</Button>
       </div>
-    </div>
+    </form>
   </div>
 </template>
 
