@@ -4,6 +4,7 @@ import Login from './views/Login.vue';
 import Registration from './views/Registration.vue';
 import DefaultLayout from './layouts/DefaultLayout.vue';
 import ArticlesEdit from './views/ArticlesEdit.vue';
+import ArticleRead from './views/ArticleRead.vue';
 import Main from './views/Main.vue';
 
 Vue.use(Router);
@@ -34,6 +35,11 @@ export default new Router({
 					path: '/articles',
 					name: 'Main',
 					component: Main
+				},
+				{
+					path: '/articles/:id',
+					name: 'ArticleRead',
+					component: ArticleRead
 				}
 			]
 		}
