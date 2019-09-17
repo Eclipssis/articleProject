@@ -16,7 +16,7 @@
 
       <div class="form-group">
         <label for="password">Passwod</label>
-          <Input :type="'password'" toogle-password id="password" v-model="password"/>
+          <Input :type="'password'" id="password" v-model="password"/>
       </div>
 
       <div class="auth-buttons">

@@ -1,5 +1,5 @@
 <template>
-	<div class="loader" :class="size">Loading...</div>
+	<div class="loader" :class="[size, color]">Loading...</div>
 </template>
 
 <script>
@@ -10,15 +10,23 @@
 			size: {
 				type: String,
 				default: ''
-			},
-		},
+      },
+      
+      color: {
+        type: String,
+        default: ''
+      }
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
 
-$spiner-color: #ffffff;
-$spiner-second-color: rgba(255, 255, 255, 0.2);
+$default-color: #d8d8d8;
+$default-second-color: rgba(255, 255, 255, 0.2);
+
+$primary-color: #025ce231;
+$primary-second-color: #007bffb2;
 
 $spiner-border: 0.8em;
 $spiner-border-small: 0.4em;
@@ -45,23 +53,28 @@ $spiner-small-size: 10px;
   font-size: 10px;
   position: relative;
   text-indent: -9999em;
-  border-top: $spiner-border solid $spiner-second-color;
-  border-right: $spiner-border solid $spiner-second-color;
-  border-bottom: $spiner-border solid $spiner-second-color;
-  border-left: $spiner-border solid $spiner-color;
+  border-top: $spiner-border solid $default-second-color;
+  border-right: $spiner-border solid $default-second-color;
+  border-bottom: $spiner-border solid $default-second-color;
+  border-left: $spiner-border solid $default-color;
   transform: translateZ(0);
   animation: spinerAnimation 1.1s infinite linear;
 }
 
 .loader.small {
-	border-top: $spiner-border-small solid $spiner-second-color;
-	border-right: $spiner-border-small solid $spiner-second-color;
-	border-bottom: $spiner-border-small solid $spiner-second-color;
-	border-left: $spiner-border-small solid $spiner-color;
+	border-top: $spiner-border-small solid $default-second-color;
+	border-right: $spiner-border-small solid $default-second-color;
+	border-bottom: $spiner-border-small solid $default-second-color;
+	border-left: $spiner-border-small solid $default-color;
 }
 
 .btn .loader {
 	margin: 0 0 0 10px;
+}
+
+.loader.primary {
+  border-color: $primary-color;
+  border-left-color: $primary-second-color;
 }
 
 @-webkit-keyframes spinerAnimation {

@@ -10,6 +10,7 @@
 
 	.content {
 		max-width: 1200px;
+		width: 100%;
 		padding: $content-padding-y 30px;
 		margin: 0 auto;
 		min-height: calc(100vh - #{$header-height + $footer-height + $content-padding-y * 2});

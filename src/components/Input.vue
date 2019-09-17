@@ -6,7 +6,7 @@
 			:value="value" 
 			@input="$emit('input', $event.target.value)"
 		/>
-		<i v-if="tooglePassword" class="fas" :class="eyeType" @click="togglePassword"></i>
+		<i v-if="type === 'password'" class="fas" :class="eyeType" @click="togglePassword"></i>
 	</div>
 </template>
 
@@ -23,11 +23,6 @@ export default {
     type: {
       type: String,
       default: "text"
-		},
-		
-		tooglePassword: {
-      type: Boolean,
-      default: false
 		}
 	},
 
