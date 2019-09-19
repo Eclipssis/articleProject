@@ -92,6 +92,36 @@ textarea.form-control {
 	resize: none;
 }
 
+// Sort srtyles
+input[type="radio"] {
+	display: none;
+	+ label {
+		cursor: pointer;
+	}
+	+ label span {
+		display: inline-block;
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		vertical-align: middle;
+		border: 2px solid #007bff;
+		cursor: pointer;
+		position: relative;
+		margin-right: 10px;
+		margin-bottom: 2px;
+	}
+
+	&:checked + label span:before {
+		content: ' ';
+		display: block;
+		border: 2px solid #ffffff;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: #007bff;
+	}
+}
+
 h1 {
 	font-size: 40px;
 }

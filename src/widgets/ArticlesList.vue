@@ -11,9 +11,22 @@
 			<h2>There is no articles, please add some...</h2>
 		</div>
 
-		<div v-if="articles && !loading">
+		<div v-if="articles && articles.length > 0 && !loading">
+			<div class="sort-panel">
+				<h3 class="sort-panel-title">Sort by:</h3>
+				<div class="radio-wrap">
+					<input type="radio" class="sort-panel-inpt radio" id="desc" value="desc" v-model="sortBy">
+					<label for="desc" class="sort-panel-label"><span></span>Desc</label>
+				</div>
+				
+				<div class="radio-wrap">
+					<input type="radio" class="sort-panel-inpt radio" id="asc" value="asc" v-model="sortBy">
+					<label for="asc" class="sort-panel-label"><span></span>Asc</label>
+				</div>
+			</div>
+
 			<transition-group name="list" class="articles-list">
-				<div v-for="article in articles" :key="article.id" class="articles-item">
+				<div v-for="article in sortedArticles" :key="article.id" class="articles-item">
 					<Article :article="article" :canEdit="canEdit"></Article>
 				</div>
 			</transition-group>
@@ -85,6 +98,7 @@
 					title: '',
 					text: ''
 				},
+				sortBy: 'desc',
 				articlesError: '',
 				articleModal: false
 			}
@@ -94,7 +108,16 @@
 			...mapState({
 				articles: state => state.articles.articles,
 				loading: state => state.articles.loading
-			})
+			}),
+
+			sortedArticles () {
+				let cloneArticles = JSON.parse(JSON.stringify(this.articles))
+				let res = cloneArticles.sort((a, b) => {
+					if (this.sortBy === 'desc') return b.created.seconds - a.created.seconds
+					if (this.sortBy === 'asc') return a.created.seconds - b.created.seconds
+				})
+				return res
+			}
 		},
 
 		methods: {
@@ -135,6 +158,29 @@
 	.button-panel {
 		float: left;
 		margin-bottom: 20px;
+	}
+
+	.sort-panel {
+		display: flex;
+		align-items: center;
+		clear: both;
+		text-align: left;
+		margin-bottom: 20px;
+		&-title {
+			display: inline-block;
+			margin-bottom: 0;
+			margin-right: 10px;
+		}
+
+		&-input {
+			margin-right: 8px;
+			margin-left: 8px;
+		}
+
+		&-label {
+			margin-left: 10px;
+			margin-right: 5px;
+		}
 	}
 
 	.articles-block {
