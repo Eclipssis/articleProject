@@ -3,8 +3,10 @@
     <span class="logo logo-light"></span>
 
     <form class="login-body">
-      <div class="login-hint">go to <router-link to="/articles" class="auth-link">main page</router-link> or</div>
-      <h2 class="text-right display-inline-block">Login</h2>
+      <div>
+        <div class="login-hint">go to <router-link to="/articles" class="auth-link">main page</router-link> or</div>
+        <h2 class="text-right display-inline-block">Login</h2>
+      </div>
 
       <div v-if="errorMessage" class="badge badge-danger">
         {{errorMessage}}
@@ -53,7 +55,7 @@ export default {
     async onSingIn() {
       try {
         await this.singIn({ email: this.email, password: this.password })
-        this.$router.push({name: 'Main'})
+        this.$router.push({name: 'ArticlesEdit'})
       } catch (error) {
         this.errorMessage = error
       } finally {

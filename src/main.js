@@ -18,13 +18,40 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 store.state.db = firebaseApp.firestore();
 Vue.config.productionTip = false;
 
+function getCurrentUser() {
+	const localUserString = window.localStorage.getItem('user') || null;
+	return JSON.parse(localUserString);
+}
+
 if (window.localStorage) {
-	var localUserString = window.localStorage.getItem('user') || 'null';
-	var localUser = JSON.parse(localUserString);
-	if (localUser && store.state.auth.user !== localUser) {
-		store.commit('auth/setUser', localUser);
+	const currenttUser = getCurrentUser();
+
+	if (currenttUser && store.state.auth.user !== currenttUser) {
+		store.commit('auth/setUser', currenttUser);
 	}
 }
+
+router.beforeEach((to, from, next) => {
+	const currenttUser = getCurrentUser();
+	const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+	const loggedIn = to.matched.some((record) => record.meta.loggedIn);
+
+	if (requiresAuth) {
+		if (!currenttUser) {
+			next({ path: '/login', query: { redirect: to.fullPath } });
+		} else {
+			next();
+		}
+	} else if (loggedIn) {
+		if (currenttUser) {
+			next({ path: '/articles/edit', query: { redirect: to.fullPath } });
+		} else {
+			next();
+		}
+	} else {
+		next();
+	}
+});
 
 new Vue({
 	router,

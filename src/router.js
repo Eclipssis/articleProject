@@ -15,7 +15,8 @@ export default new Router({
 		{
 			path: '/login',
 			name: 'Login',
-			component: Login
+			component: Login,
+			meta: { loggedIn: true }
 		},
 		{
 			path: '/registration',
@@ -23,13 +24,15 @@ export default new Router({
 			component: Registration
 		},
 		{
-			path: '/',
+			path: '',
 			component: DefaultLayout,
+			redirect: '/articles',
 			children: [
 				{
 					path: '/articles/edit',
 					name: 'ArticlesEdit',
-					component: ArticlesEdit
+					component: ArticlesEdit,
+					meta: { requiresAuth: true }
 				},
 				{
 					path: '/articles',

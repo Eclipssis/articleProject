@@ -51,7 +51,8 @@ a:visited {
 }
 
 .form-group {
-  display: flex;
+	display: flex;
+	justify-content: flex-end;
   align-items: center;
   margin-bottom: 15px;
   label {
@@ -138,12 +139,12 @@ h1, h2, h3, h4, h5, h6 {
 // Regestration styles
 
 .login, .registration {
-  display: flex;
+	display: flex;
+	justify-content: center;
   flex-wrap: wrap;
   height: 100vh;
   overflow: hidden;
   background: #222d32;
-  justify-content: center;
 	align-items: center;
 	color: #ffffff;
 	text-align: right;

@@ -3,8 +3,10 @@
     <span class="logo logo-light"></span>
     
     <div class="registration-body">
-      <div class="login-hint">go to <router-link to="/articles" class="auth-link">main page</router-link> or</div>
-      <h2 class="text-right display-inline-block">Registration</h2>
+      <div>
+        <div class="login-hint">go to <router-link to="/articles" class="auth-link">main page</router-link> or</div>
+        <h2 class="text-right display-inline-block">Registration</h2>
+      </div>
 
       <div v-if="errorMessage" class="badge badge-danger">
         {{errorMessage}}
