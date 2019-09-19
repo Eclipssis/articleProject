@@ -190,7 +190,7 @@
 
 		&-text {
 			overflow: hidden;
-			max-height: 80px;
+			max-height: 84px;
 			margin-bottom: 10px;
 			&:after {
 				content: '...'
@@ -211,7 +211,6 @@
 			position: absolute;
 			top: 8px;
 			right: 8px;
-			
 		}
 		
 		&-icon {
@@ -241,7 +240,7 @@
 			}
 
 			&-body {
-				height: 200px;
+				height: 154px;
 			}
 
 			&-text {
