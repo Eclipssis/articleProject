@@ -1,9 +1,10 @@
 <template>
   <div class="login">
     <span class="logo logo-light"></span>
-    
+
     <form class="login-body">
-      <h2 class="text-right">Login</h2>
+      <div class="login-hint">go to <router-link to="/articles" class="auth-link">main page</router-link> or</div>
+      <h2 class="text-right display-inline-block">Login</h2>
 
       <div v-if="errorMessage" class="badge badge-danger">
         {{errorMessage}}
@@ -62,4 +63,3 @@ export default {
   }
 };
 </script>
-

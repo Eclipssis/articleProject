@@ -61,7 +61,6 @@ a:visited {
 }
 
 .form-control {
-	min-width: 200px;
   height: 30px;
   font-size: 15px;
   padding: 3px 10px;
@@ -81,7 +80,13 @@ a:visited {
   }
 }
 
+.form-control[type='text'],
+.form-control[type='password'] {
+	min-width: 200px;
+}
+
 textarea.form-control {
+	min-width: 200px;
 	padding-top: 8px;
 	min-height: 100px;
 	resize: none;
@@ -92,7 +97,12 @@ h1 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
+	line-height: 1;
+}
+
+.display-inline-block {
+	display: inline-block;
 }
 
 // Regestration styles
@@ -139,6 +149,10 @@ h1, h2, h3, h4, h5, h6 {
 		display: inline-block;
 		margin-right: 15px;
 		font-size: 15px; 
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
 	}
 
 	.auth-buttons {
@@ -146,6 +160,13 @@ h1, h2, h3, h4, h5, h6 {
 		justify-content: flex-end;
 		display: flex;
 		align-items: center;
+	}
+
+	.login-hint {
+		display: inline-block;
+		margin: 0 16px 10px;
+		vertical-align: middle;
+		font-size: 12px;
 	}
 }
 

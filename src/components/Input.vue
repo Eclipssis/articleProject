@@ -55,7 +55,9 @@ export default {
 <style lang="scss" scoped>
 
 .input-wrap {
-  position: relative;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .fas {

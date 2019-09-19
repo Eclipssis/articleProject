@@ -7,9 +7,7 @@
 		</div>
 
 		<div class="text-left">
-			<router-link to="/articles" >
-				<Button name="btn-dark">Back</Button>
-			</router-link>
+			<Button name="btn-dark" @click="$router.go(-1)">Back</Button>
 		</div>
 		
 	</div>
@@ -26,8 +24,6 @@
 		},
 
 		beforeRouteEnter (to, from, next) {
-			console.log('to', to)
-			console.log('from', from)
 			next(vm => {
 				vm.article = to.params.article
 			})
