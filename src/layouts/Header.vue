@@ -62,11 +62,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+	@import "../assets/styles/_variables.scss";
+
 	.header {
 		display: flex;
-		padding: 0 40px;
+		flex-wrap: wrap;
+		padding: 0 20px;
 		background: #3b414d;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
 		color: #ffffff;
 	}
@@ -112,5 +115,12 @@ export default {
 
 	.fas {
 		margin-left: 10px;
+	}
+
+	@media (min-width: $breakpoint-tablet) {
+		.header {
+			padding: 0 40px;
+			justify-content: space-between;
+		}
 	}
 </style>

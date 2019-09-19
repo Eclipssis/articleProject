@@ -9,6 +9,7 @@
 	$content-padding-y: 30px;
 
 	.content {
+		box-sizing: border-box;
 		max-width: 1200px;
 		width: 100%;
 		padding: $content-padding-y 30px;

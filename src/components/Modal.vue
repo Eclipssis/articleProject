@@ -35,6 +35,8 @@
 </script>
 
 <style lang="scss">
+@import "../assets/styles/_variables.scss";
+
 .modal {
   position: fixed;
   z-index: 9999;
@@ -84,6 +86,7 @@
 	&-title {
 		text-transform: uppercase;
 		margin-bottom: 5px;
+		padding-right: 100px;
 	}
 
 	&-subtitle {
@@ -94,7 +97,18 @@
 	.btn {
 		margin-left: 10px;
 	}
+
+	.form-group {
+		justify-content: center;
+	}
+
+	.form-control[type='text'], 
+	textarea.form-control {
+		min-width: 200px;
+	}
 }
+
+
 
 .modal-enter {
   opacity: 0;
@@ -108,5 +122,14 @@
 .modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+@media (min-width: $breakpoint-tablet) {
+	.modal {
+		.form-control[type='text'], 
+		textarea.form-control {
+			min-width: 315px;
+		}
+	}
 }
 </style>

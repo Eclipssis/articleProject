@@ -154,6 +154,7 @@
 </script>
 
 <style lang="scss" scoped>
+	@import "../assets/styles/_variables.scss";
 
 	.button-panel {
 		float: left;
@@ -192,14 +193,12 @@
 		flex-wrap: wrap;
 		width: 100%;
 		text-align: left;
-		margin: 0 -15px 0;
 	}
 
 	.articles-item {
 		box-sizing: border-box;
-		padding: 0 15px;
-		flex: 1 1 50%;
-		max-width: 50%;
+		flex: 1 1 100%;
+		max-width: 100%;
 	}
 
 	.list-enter-active, .list-leave-active {
@@ -208,5 +207,17 @@
 	.list-enter, .list-leave-to {
 		opacity: 0;
 		transform: scale(0.8) translateY(20px);
+	}
+
+	@media (min-width: $breakpoint-tablet) {
+		.articles-list {
+			margin: 0 -15px 0;
+		}
+
+		.articles-item {
+			flex: 1 1 50%;
+			max-width: 50%;
+			padding: 0 15px;
+		}
 	}
 </style>

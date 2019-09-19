@@ -1,5 +1,5 @@
 <template>
-	<article class="article">
+	<article class="article" :class="{'article-edit': canEdit}">
 		<div class="article-body">
 			<div v-if="canEdit" class="article-controls">
 				<span @click="changeStateEditModal(true)" class="article-icon edit-icon" title="Edit article">
@@ -162,6 +162,8 @@
 </script>
 
 <style lang="scss" scoped>
+	@import "../assets/styles/_variables.scss";
+
 	.article {
 		position: relative;
 		display: inline-block;
@@ -172,6 +174,8 @@
 		border: 1px solid #3b414d24;
 		border-radius: 5px;
 		&-body {
+			display: flex;
+			flex-direction: column;
 			padding: 15px 20px;
 			background: #ffffff;
 			border-radius: 5px;
@@ -179,11 +183,14 @@
 
 		&-title {
 			margin-bottom: 10px;
+			line-height: 1.2;
+			overflow: hidden;
+			max-height: 56px;
 		}
 
 		&-text {
 			overflow: hidden;
-			max-height: 105px;
+			max-height: 80px;
 			margin-bottom: 10px;
 			&:after {
 				content: '...'
@@ -191,6 +198,7 @@
 		}
 		
 		&-more {
+			margin-top: auto;
 			font-size: 14px;
 			color: #007bff;
 			text-decoration: underline;
@@ -217,6 +225,34 @@
 			margin-right: 4px;
 			font-weight: 500;
 			font-size: 12px;
+		}
+	}
+
+	.article-edit {
+		.article-title {
+			padding-top: 25px;
+		}
+	}
+
+	@media (min-width: $breakpoint-tablet) {
+		.article {
+			&-title {
+				padding-right: 100px;
+			}
+
+			&-body {
+				height: 200px;
+			}
+
+			&-text {
+				height: 105px;
+			}
+		}
+
+		.article-edit {
+			.article-title {
+				padding-top: 0;
+			}
 		}
 	}
 </style>
