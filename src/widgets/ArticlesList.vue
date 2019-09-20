@@ -11,6 +11,10 @@
 			<h2>There is no articles, please add some...</h2>
 		</div>
 
+		<h3 v-if="articles && articles.length === 0 && !loading" class="empty-articles-text">
+			Oups! There is no articles :(
+		</h3>
+
 		<div v-if="articles && articles.length > 0 && !loading">
 			<div class="sort-panel">
 				<h3 class="sort-panel-title">Sort by:</h3>
@@ -155,6 +159,11 @@
 
 <style lang="scss" scoped>
 	@import "../assets/styles/_variables.scss";
+
+	.empty-articles-text {
+		text-align: left;
+		clear: both;
+	}
 
 	.button-panel {
 		float: left;
