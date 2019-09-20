@@ -7,31 +7,31 @@
 
 html,
 body {
-	height: 100%;
+  height: 100%;
 }
 
 ul, ol {
-	list-style: none;
+  list-style: none;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 a:visited {
-	color: #ffffff;
+  color: #ffffff;
 }
 
 .content-wrapper {
-	flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .pull-right {
-	float: right;
+  float: right;
 }
 
 .pull-left {
-	float: left;
+  float: left;
 }
 
 .text-left {
@@ -47,20 +47,20 @@ a:visited {
 }
 
 .wraper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 .form-group {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 15px;
   label {
     min-width: 120px;
-		font-size: 14px;
+    font-size: 14px;
   }
 }
 
@@ -70,8 +70,8 @@ a:visited {
   padding: 3px 10px;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-	color: #495057;
-	font-family: "Roboto", Helvetica, Arial, sans-serif;
+  color: #495057;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   &:focus {
     border-color: #80bdff;
@@ -86,170 +86,170 @@ a:visited {
 
 .form-control[type='text'],
 .form-control[type='password'] {
-	min-width: 200px;
+  min-width: 200px;
 }
 
 textarea.form-control {
-	min-width: 200px;
-	padding-top: 8px;
-	min-height: 100px;
-	resize: none;
+  min-width: 200px;
+  padding-top: 8px;
+  min-height: 100px;
+  resize: none;
 }
 
 // Sort srtyles
 input[type="radio"] {
-	display: none;
-	+ label {
-		cursor: pointer;
-	}
-	+ label span {
-		display: inline-block;
-		width: 14px;
-		height: 14px;
-		border-radius: 50%;
-		vertical-align: middle;
-		border: 2px solid #007bff;
-		cursor: pointer;
-		position: relative;
-		margin-right: 10px;
-		margin-bottom: 2px;
-	}
+  display: none;
+  + label {
+    cursor: pointer;
+  }
+  + label span {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 2px solid #007bff;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 2px;
+  }
 
-	&:checked + label span:before {
-		content: ' ';
-		display: block;
-		border: 2px solid #ffffff;
-		width: 10px;
-		height: 10px;
-		border-radius: 50%;
-		background-color: #007bff;
-	}
+  &:checked + label span:before {
+    content: ' ';
+    display: block;
+    border: 2px solid #ffffff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #007bff;
+  }
 }
 
 h1 {
-	font-size: 25px;
+  font-size: 25px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	margin-bottom: 20px;
-	line-height: 1;
+  margin-bottom: 20px;
+  line-height: 1;
 }
 
 .display-inline-block {
-	display: inline-block;
+  display: inline-block;
 }
 
 // Regestration styles
 
 .login, .registration {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   height: 100vh;
   overflow: hidden;
   background: #222d32;
-	align-items: center;
-	color: #ffffff;
-	text-align: center;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
 
-	&-body {
-		padding: 0 25px;
-	}
+  &-body {
+    padding: 0 25px;
+  }
 
-	.logo {
-		position: absolute;
-		top: 35px;
-		left: 50%;
-		margin-left: -60px;
-		margin-bottom: 60px;
-	}
+  .logo {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    margin-left: -60px;
+    margin-bottom: 60px;
+  }
 
-	.badge {
-		margin-bottom: 10px;
-	}
+  .badge {
+    margin-bottom: 10px;
+  }
 
-	.btn-login {
-		margin-left: 18px;
-	}
+  .btn-login {
+    margin-left: 18px;
+  }
 
-	.form-group {
-		text-align: right;
-		
-		label {
-			min-width: 180px;
-			font-size: 18px;
-			color: #ffffff;
-		}
-	}
+  .form-group {
+    text-align: right;
+    
+    label {
+      min-width: 180px;
+      font-size: 18px;
+      color: #ffffff;
+    }
+  }
 
-	.auth-link {
-		display: inline-block;
-		margin-right: 15px;
-		font-size: 15px; 
-		color: #ffffff;
-		text-decoration: underline;
-		&:hover {
-			text-decoration: none;
-		}
-	}
+  .auth-link {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 15px; 
+    color: #ffffff;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 
-	.auth-buttons {
-		font-size: 12px;
-		justify-content: flex-end;
-		display: flex;
-		align-items: center;
-	}
+  .auth-buttons {
+    font-size: 12px;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+  }
 
-	.login-hint {
-		display: inline-block;
-		margin: 0 16px 10px;
-		vertical-align: middle;
-		font-size: 12px;
-	}
+  .login-hint {
+    display: inline-block;
+    margin: 0 16px 10px;
+    vertical-align: middle;
+    font-size: 12px;
+  }
 }
 
 // Badge styles
 
 .badge {
-	display: inline-block;
-	padding: .35em .5em;
-	font-size: 75%;
-	font-weight: 700;
-	line-height: 1;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: baseline;
-	border-radius: .25rem;
-	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  display: inline-block;
+  padding: .35em .5em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .badge-danger {
-	color: #fff;
-	background-color: #dc3545;
+  color: #fff;
+  background-color: #dc3545;
 }
 
 // Icons 
 
 .delete-icon {
-	color: #dc3545;
+  color: #dc3545;
 }
 
 .edit-icon {
-	border-radius: 50%;
-	color: #ffc107;
+  border-radius: 50%;
+  color: #ffc107;
 }
 
 // Media styles
 
 @media (min-width: $breakpoint-moblie) {
-	.login, .registration {
-		text-align: right;
-		.form-group label {
-			padding-right: 15px;
-		}
-	}
+  .login, .registration {
+    text-align: right;
+    .form-group label {
+      padding-right: 15px;
+    }
+  }
 
-	h1 {
-		font-size: 40px;
-	}
+  h1 {
+    font-size: 40px;
+  }
 }

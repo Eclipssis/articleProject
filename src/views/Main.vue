@@ -1,25 +1,25 @@
 <template>
-	<div class="main-page">
-		<h1 class="text-left">ARTICLES</h1>
-		<ArticlesList></ArticlesList>
-	</div>
+  <div class="main-page">
+    <h1 class="text-left">ARTICLES</h1>
+    <ArticlesList></ArticlesList>
+  </div>
 </template>
 
 <script>
-	import ArticlesList from "@/widgets/ArticlesList";
+  import ArticlesList from "@/widgets/ArticlesList";
 
-	export default {
-		name: 'Main',
+  export default {
+    name: 'Main',
 
-		components: {
-			ArticlesList
-		},
+    components: {
+      ArticlesList
+    },
 
-		data() {
-			return {
-			}
-		},
-	}
+    data() {
+      return {
+      }
+    },
+  }
 </script>
 
 <style lang="scss" scoped>

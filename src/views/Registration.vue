@@ -23,7 +23,7 @@
       </div>
 
       <!-- TODO: add field repeat password-->
-			<!-- <div class="form-group">
+      <!-- <div class="form-group">
         <label for="password">Repeat password</label>
           <Input :type="'password'" toogle-password id="password" v-model="repeatPassword"/>
       </div> -->

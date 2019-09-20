@@ -1,23 +1,23 @@
 <template>
-	<div class="loader" :class="[size, color]">Loading...</div>
+  <div class="loader" :class="[size, color]">Loading...</div>
 </template>
 
 <script>
-	export default {
-		name: "Spiner",
+  export default {
+    name: "Spiner",
 
-		props: {
-			size: {
-				type: String,
-				default: ''
+    props: {
+      size: {
+        type: String,
+        default: ''
       },
       
       color: {
         type: String,
         default: ''
       }
-		}
-	}
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -43,12 +43,12 @@ $spiner-small-size: 10px;
 
 .loader.small,
 .loader.small:after {
-	width: $spiner-small-size;
-	height: $spiner-small-size;
+  width: $spiner-small-size;
+  height: $spiner-small-size;
 }
 
 .loader {
-	display: inline-block;
+  display: inline-block;
   margin: 10px;
   font-size: 10px;
   position: relative;
@@ -62,14 +62,14 @@ $spiner-small-size: 10px;
 }
 
 .loader.small {
-	border-top: $spiner-border-small solid $default-second-color;
-	border-right: $spiner-border-small solid $default-second-color;
-	border-bottom: $spiner-border-small solid $default-second-color;
-	border-left: $spiner-border-small solid $default-color;
+  border-top: $spiner-border-small solid $default-second-color;
+  border-right: $spiner-border-small solid $default-second-color;
+  border-bottom: $spiner-border-small solid $default-second-color;
+  border-left: $spiner-border-small solid $default-color;
 }
 
 .btn .loader {
-	margin: 0 0 0 10px;
+  margin: 0 0 0 10px;
 }
 
 .loader.primary {

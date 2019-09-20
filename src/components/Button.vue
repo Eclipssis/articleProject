@@ -1,7 +1,7 @@
 <template>
   <button class="btn" :type="type" :class="name" @click="$emit('click', $event)">
     <slot></slot>
-		<Spiner size="small" v-if="loading"></Spiner>
+    <Spiner size="small" v-if="loading"></Spiner>
   </button>
 </template>
 
@@ -11,9 +11,9 @@ import Spiner from "@/components/Spiner";
 export default {
   name: "Button",
 
-	components: {
-		Spiner
-	},
+  components: {
+    Spiner
+  },
 
   props: {
     name: {
@@ -25,11 +25,11 @@ export default {
       type: String,
       default: "button"
     },
-		
-		loading: {
+
+    loading: {
       type: Boolean,
       default: false
-		}
+    }
   }
 };
 </script>
@@ -43,7 +43,7 @@ $btn-dark-bg: #343a40;
 
 .btn {
   display: inline-block;
-	font: 1rem/1.5 "Roboto", Helvetica, Arial, sans-serif;
+  font: 1rem/1.5 "Roboto", Helvetica, Arial, sans-serif;
   text-align: center;
   vertical-align: middle;
   background-color: transparent;
