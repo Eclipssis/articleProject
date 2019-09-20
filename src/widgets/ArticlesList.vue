@@ -137,6 +137,7 @@
           try {
             await this.addArticle(this.editingArtile)
             this.onChangeStateArticleModal(false)
+            this.editingArtile = { title: '', text: '' }
           } catch (error) {
             this.articlesError = error
           }

@@ -6,6 +6,13 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import firebaseConfig from '@/config/firebase';
 
+// Global imports
+import Button from '@/components/Button';
+import Input from '@/components/Input';
+
+Vue.component('Input', Input);
+Vue.component('Button', Button);
+
 // Configs
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 store.state.db = firebaseApp.firestore();
