@@ -1,7 +1,7 @@
 <template>
   <button class="btn" :type="type" :class="name" @click="$emit('click', $event)">
     <slot></slot>
-		<Spiner :size="'small'" v-if="loading"></Spiner>
+		<Spiner size="small" v-if="loading"></Spiner>
   </button>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
 	<div class="articles-block">
 		
-		<Spiner v-if="loading" :color="'primary'"></Spiner>
+		<Spiner v-if="loading" color="primary"></Spiner>
 		
 		<div class="button-panel">
 			<Button v-if="canEdit" @click="onChangeStateArticleModal(true)">Add article</Button>
@@ -46,7 +46,7 @@
 				<form>
 					<div class="form-group">
 						<label for="article-title">Title</label>
-						<Input v-model="editingArtile.title" title="Article title" :placeholder="'Enter title...'" id="article-title"/>
+						<Input v-model="editingArtile.title" title="Article title" placeholder="Enter title..." id="article-title"/>
 					</div>
 
 					<div class="form-group">

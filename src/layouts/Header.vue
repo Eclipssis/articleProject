@@ -1,6 +1,6 @@
 <template>
 	<header class="header">
-		<router-link :to="'/'" class="logo-header">
+		<router-link to="/" class="logo-header">
 			<span class="logo logo-light"></span>
 		</router-link>
 
@@ -98,6 +98,7 @@ export default {
 				display: flex;
 				align-items: center;
 				height: 52px;
+				color: #ffffff;
 				cursor: pointer;
 				padding: 0 15px;
 				transition: all 0.2s ease;

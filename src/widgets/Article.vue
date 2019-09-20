@@ -50,7 +50,7 @@
 				<form v-if="!modals.edit.errorMessage">
 					<div class="form-group">
 						<label for="article-title">Title</label>
-						<Input v-model="localArticle.title" title="Article title" :placeholder="'Enter title...'" id="article-title"/>
+						<Input v-model="localArticle.title" title="Article title" placeholder="Enter title..." id="article-title"/>
 					</div>
 
 					<div class="form-group">
@@ -175,23 +175,26 @@
 		border-radius: 5px;
 		&-body {
 			display: flex;
+			min-height: 178px;
+			border-radius: 5px;
 			flex-direction: column;
 			padding: 15px 20px;
 			background: #ffffff;
-			border-radius: 5px;
 		}
 
 		&-title {
 			margin-bottom: 10px;
 			line-height: 1.2;
+			word-break: break-word;
+			max-height: 60px;
 			overflow: hidden;
-			max-height: 56px;
 		}
 
 		&-text {
 			overflow: hidden;
 			max-height: 84px;
 			margin-bottom: 10px;
+			word-break: break-word;
 			&:after {
 				content: '...'
 			}
@@ -237,10 +240,6 @@
 		.article {
 			&-title {
 				padding-right: 100px;
-			}
-
-			&-body {
-				height: 154px;
 			}
 
 			&-text {
